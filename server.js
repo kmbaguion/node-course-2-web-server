@@ -1,6 +1,8 @@
 const express = require('express');
 const fs = require('fs');
 
+const port = process.env.PORT || 3000;
+
 var app = express();
 
 app.use(express.static(__dirname + '/public'));
@@ -32,6 +34,6 @@ app.get('/about', (request, response) => {
 	response.send('About Page');
 });
 
-app.listen(3000, () =>{
-	console.log('server is up');
+app.listen(port, () =>{
+	console.log(` Server is up on port ${port}`);
 });
